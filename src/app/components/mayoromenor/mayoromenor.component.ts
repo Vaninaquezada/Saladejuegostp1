@@ -22,6 +22,7 @@ export class MayoromenorComponent {
   start = 'visible';
   perdiste = '';
   mensaje = '';
+  numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   ngOnInit(): void {}
 
@@ -67,11 +68,25 @@ export class MayoromenorComponent {
     this.numeroNuevo = this.numero;
   }
   public generarnumero() {
-    return Math.floor(Math.random() * 12 + 1);
+    console.log(this.numeros);
+    let numerosTemp: number[] = [];
+    let random = Math.floor(Math.random() * this.numeros.length);
+    console.log(random);
+    let selected = this.numeros[random];
+    console.log(selected);
+    this.numeros.forEach((element) => {
+      if (element !== selected) {
+        numerosTemp.push(element);
+      }
+    });
+
+    this.numeros = numerosTemp;
+    console.log(this.numeros);
+    return selected;
   }
 
   terminarjugo() {
-    if (this.incorrectas > 2 && this.jugando) {
+    if (this.incorrectas > 1) {
       this.victoria = 'visible';
       this.resultadoText = 'Perdiste';
     } else {
@@ -94,7 +109,7 @@ export class MayoromenorComponent {
 
   clickBoton() {
     this.jugando = true;
-
+    this.numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     this.numero = 0;
     this.start = '';
     this.numeroNuevo = '?';

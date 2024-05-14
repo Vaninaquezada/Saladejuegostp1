@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { GitServiceService } from '../../services/git-service.service';
-
 @Component({
   selector: 'app-quiensoy',
   standalone: true,

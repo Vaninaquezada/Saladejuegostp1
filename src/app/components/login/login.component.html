@@ -12,18 +12,15 @@
             required
           />
           <label for="email">Email</label>
-          <span
-            class="error ion-padding"
+          <p
+            class="error"
             *ngIf="loginForm.get('email')!.errors?.['required'] && loginForm.get('email')!.touched"
           >
             El email es requerido
-          </span>
-          <span
-            class="error ion-padding"
-            *ngIf="loginForm.get('email')!.errors?.['email'] "
-          >
+          </p>
+          <p class="error" *ngIf="loginForm.get('email')!.errors?.['email'] ">
             No cumple el formato de email.
-          </span>
+          </p>
         </div>
         <div class="input-box">
           <input
@@ -33,12 +30,12 @@
             required
           />
           <label>Contraseña</label>
-          <span
-            class="error ion-padding"
+          <p
+            class="error"
             *ngIf="loginForm.get('password')!.errors?.['required'] && loginForm.get('password')!.touched"
           >
             La contraseña es requerida.
-          </span>
+          </p>
         </div>
 
         <button type="submit" class="btn">Ingresar</button>
@@ -46,23 +43,21 @@
         <div class="signup-link">
           <a routerLink="/registro">Registro de usuario</a>
         </div>
-        <div class="forgot-pass">
-          <label for="usuarios">Seleccione usuario </label>
-          <select
-            class="form-control"
-            value="seleccione"
-            okText="Seleccionar"
-            name="usuarios"
-            [(ngModel)]="seleccion"
-            cancelText="Cancelar"
-            (change)="onChange(seleccion)"
-          >
-            <option value="admin">admin</option>
-            <option value="usuario">usuario</option>
-            <option value="fulanito">Fulanito</option>
-          </select>
-        </div>
       </form>
+      <div class="forgot-pass">
+        <label for="usuarios">Seleccione usuario </label>
+        <select
+          class="form-control"
+          value="seleccione"
+          name="usuarios"
+          [(ngModel)]="seleccion"
+          (change)="onChange(seleccion)"
+        >
+          <option value="admin">admin</option>
+          <option value="usuario">usuario</option>
+          <option value="fulanito">Fulanito</option>
+        </select>
+      </div>
     </div>
     <span style="--i: 0"></span>
     <span style="--i: 1"></span>

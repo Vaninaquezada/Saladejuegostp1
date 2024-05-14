@@ -59,6 +59,11 @@ p {
     color: #0ef;
     text-align: center;
 }
+.error{
+    
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
 .input-box {
     position: relative;
     margin: 25px 0;

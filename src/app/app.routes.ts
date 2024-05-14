@@ -16,9 +16,27 @@ export const routes: Routes = [
   { path: 'quiensoy', component: QuiensoyComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'juegos', component: JuegosComponent },
-  { path: 'preguntados', component: PreguntadosComponent },
-  { path: 'ahorcado', component: AhorcadoComponent },
-  { path: 'mayormenor', component: MayoromenorComponent },
+  {
+    path: 'preguntados',
+    loadComponent: () =>
+      import('./components/preguntados/preguntados.component').then(
+        (x) => x.PreguntadosComponent
+      ),
+  },
+  {
+    path: 'ahorcado',
+    loadComponent: () =>
+      import('./components/ahorcado/ahorcado.component').then(
+        (x) => x.AhorcadoComponent
+      ),
+  },
+  {
+    path: 'mayormenor',
+    loadComponent: () =>
+      import('./components/mayoromenor/mayoromenor.component').then(
+        (x) => x.MayoromenorComponent
+      ),
+  },
   { path: 'mijuego', component: MijuegoComponent },
   { path: '**', component: HomeComponent },
 ];

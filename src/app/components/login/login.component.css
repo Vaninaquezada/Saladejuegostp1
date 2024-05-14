@@ -5,6 +5,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.error{
+    
+    color: rgb(255, 0, 0);
+    text-align: center;
+
+    
+}
 .body {
     display: flex;
     justify-content: center;
@@ -61,7 +68,7 @@ p {
 }
 .input-box {
     position: relative;
-    margin: 25px 0;
+    margin:25px 0;
 }
 .input-box input {
     width: 100%;
